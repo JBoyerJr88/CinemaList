@@ -29,18 +29,18 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
 // Make API call
-const options = {
-  method: 'GET',
-  url: 'https://moviesdatabase.p.rapidapi.com/titles/search/title/%7Btitle%7D',
-  params: {
-    exact: 'true',
-    titleType: 'movie'
-  },
-  headers: {
-    'X-RapidAPI-Key': apiKey,
-    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-  }
-};
+
+
+async function apiCall(){
+    const options = {
+    method: 'GET',
+    url: 'https://online-movie-database.p.rapidapi.com/auto-complete',
+    params: {q: 'game of thr'},
+    headers: {
+      'X-RapidAPI-Key': apiKey,
+      'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+        }
+    };
 
 try {
 	const response = await axios.request(options);
@@ -48,4 +48,10 @@ try {
 } catch (error) {
 	console.error(error);
 }
+};
+
+apiCall();
+
+
+
 
