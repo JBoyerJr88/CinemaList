@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const movieSchema = new mongoose.Schema({
     "i": Object,
@@ -11,8 +11,6 @@ const movieSchema = new mongoose.Schema({
     "year": Number,
 });
 
-const Data = mongoose.model('Data', movieSchema);
+const Movies = mongoose.model("Movies", movieSchema);
 
-
-module.exports = Data;
-
+module.exports = Movies;
